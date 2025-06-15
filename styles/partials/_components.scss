@@ -1,0 +1,131 @@
+@use './variables';
+
+.component__profile-date {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile {
+  &__avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+  &__name,
+  &__date {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  &__name {
+    font-weight: variables.$fw-accent;
+    color: variables.$color-card-author;
+  }
+
+  &__date {
+    font-weight: variables.$fw-main;
+    color: variables.$color-card-date;
+  }
+}
+
+.component__share-button,
+.component__share-button--close {
+  margin-left: auto;
+  width: 2rem;
+  height: 2rem;
+
+  fill: variables.$color-hover-share-button;
+  background-color: variables.$color-body-background;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: fill 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.component__share-button {
+  &:hover,
+  &:active,
+  &:focus-visible {
+    fill: white;
+    background-color: variables.$color-hover-share-button;
+  }
+}
+
+.share-tost--mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-block: 1.375rem;
+  padding-inline: 1.875rem;
+
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  transform: translateY(-100%);
+  background-color: variables.$color-main-share-tost;
+
+  &.hidden {
+    // transform: translateY(0);
+    // height: 0;
+    // width: 0;
+    display: none;
+  }
+}
+
+.share-tost__text {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: variables.$color-text-share-tost;
+}
+.social-icons-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-inline-start: 1.5rem;
+}
+
+.social-icons__link {
+  display: flex;
+}
+
+@media (min-width: 48rem) {
+  .share-tost--mobile {
+    width: fit-content;
+    padding-block: 1.125rem;
+    padding-inline: 2.375rem;
+    border-radius: inherit;
+
+    top: 100%;
+    right: 0;
+
+    transform: translate(30%, -290%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 99%;
+      left: 50%;
+      transform: translateX(-50%) rotate(180deg);
+
+      border-left: 0.875rem solid transparent;
+      border-right: 0.875rem solid transparent;
+      border-bottom: 0.8125rem solid variables.$color-main-share-tost;
+    }
+  }
+  .component__share-button--close {
+    display: none;
+  }
+}
+
+@media (min-width: 90rem) {
+  .share-tost--mobile {
+    transform: translate(28%, -270%);
+  }
+}

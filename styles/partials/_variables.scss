@@ -1,0 +1,20 @@
+@use './fonts';
+
+$color-card-heading: hsl(217, 19%, 35%);
+$color-card-main-text: hsl(214, 17%, 51%);
+$color-card-author: hsl(217, 19%, 35%);
+$color-card-date: hsl(212, 23%, 69%);
+$color-card-background: hsl(0, 100%, 100%);
+$color-body-background: hsl(210, 46%, 95%);
+
+$color-main-share-tost: hsl(217, 19%, 35%);
+$color-text-share-tost: hsl(212, 23%, 69%);
+$color-hover-share-button: hsl(214, 17%, 51%);
+$color-main-share-button: hsl(217, 19%, 35%);
+
+$font-main: 'Manrope', sans-serif;
+
+$fw-accent: 700;
+$fw-main: 500;
+
+$card-box-shadow: 0 2.5rem 2.5rem -0.625rem rgba(201, 213, 225, 0.5);
