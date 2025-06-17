@@ -37,6 +37,7 @@
 
   fill: variables.$color-hover-share-button;
   background-color: variables.$color-body-background;
+
   border-radius: 50%;
   cursor: pointer;
 
@@ -69,11 +70,15 @@
   transform: translateY(-100%);
   background-color: variables.$color-main-share-tost;
 
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.2s ease-in-out, visibility 0.4s linear 0.4s;
+
   &.hidden {
-    // transform: translateY(0);
-    // height: 0;
-    // width: 0;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
 }
 
@@ -95,7 +100,7 @@
   display: flex;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: variables.$bp-tablet) {
   .share-tost--mobile {
     width: fit-content;
     padding-block: 1.125rem;
@@ -110,7 +115,7 @@
     &::before {
       content: '';
       position: absolute;
-      top: 99%;
+      top: 97%;
       left: 50%;
       transform: translateX(-50%) rotate(180deg);
 
@@ -124,7 +129,7 @@
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: variables.$bp-desktop) {
   .share-tost--mobile {
     transform: translate(28%, -270%);
   }

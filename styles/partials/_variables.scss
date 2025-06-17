@@ -1,5 +1,8 @@
 @use './fonts';
 
+$bp-tablet: 48rem;
+$bp-desktop: 90rem;
+
 $color-card-heading: hsl(217, 19%, 35%);
 $color-card-main-text: hsl(214, 17%, 51%);
 $color-card-author: hsl(217, 19%, 35%);

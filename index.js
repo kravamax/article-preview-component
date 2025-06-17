@@ -4,10 +4,24 @@ const shareButtonClose = document.querySelector(
 );
 const shareToast = document.querySelector('.share-tost--mobile');
 
-shareButton.addEventListener('click', () => {
-  shareToast.classList.toggle('hidden');
+shareButton.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hideToast();
 });
 
-shareButtonClose.addEventListener('click', () => {
-  shareToast.classList.toggle('hidden');
+shareButtonClose.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hideToast();
 });
+
+document.addEventListener('click', (e) => {
+  const isClickInsideToast = shareToast.contains(e.target);
+
+  if (!isClickInsideToast && !shareToast.classList.contains('hidden')) {
+    hideToast();
+  }
+});
+
+function hideToast() {
+  shareToast.classList.toggle('hidden');
+}
